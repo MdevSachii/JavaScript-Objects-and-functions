@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Person = function (name, yearOfBirth, occupation){
+            this.name = name;
+            this.yearOfBirth = yearOfBirth;
+            this.occupation = occupation;
+            this.calculateAge = function () {
+                var currentYear = new Date().getFullYear();
+                var age = currentYear - this.yearOfBirth;
+                console.log(age);
+            }
+            return this;
+        }
+        var john = new Person('John', 1990, 'Developer');
+        console.log(john);
+
+        var alyce = new Person('Alyce', 1995, 'Teacher');
+        console.log(alyce);
+
+        var mice = new Person('Mice', 2000, 'Doctor');
+        console.log(mice);
+    </script>
+</body>
+
+</html>
