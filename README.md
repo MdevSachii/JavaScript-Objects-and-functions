@@ -7,3 +7,4 @@
 * [String Object](./stringObject.html)
 * [Activity: Find Match](./findMatch.html)
 * [Date Object](./dateObject.html)
+* [Activity - Display Digital Clock](./displayDigitalClock.html)
