@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Match</title>
+</head>
+
+<body>
+    <script>
+        var alphabets = "abcdefghijklmnopqrstuvwxyz";
+        var extractLetters = function (name) {
+            var result = '';
+            name = name.toLowerCase();
+            for (var i = 0; i < alphabets.length; i++) {
+                var char = alphabets.charAt(i);
+                if (name.includes(char)) {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        var calculateMatch = function (Letters, animal) {
+            var length = Letters.length;
+            var match = 0;
+
+            for (var i = 0; i < length; i++) {
+                var char = Letters.charAt(i);
+                if (animal.includes(char)) {
+                    match++;
+                }
+            }
+            return (match / length * 100) + '%';
+        }
+
+        var animals = ['lion', 'tiger', 'sheep', 'rabbit', 'camel'];
+        var calculateMatches = function (name) {
+            var letters = extractLetters(name)
+            console.log(letters);
+
+            var result = {};
+            for (var i = 0; i < animals.length; i++) {
+                var property = animals[i];
+                result[property] = calculateMatch(letters, animals[i])
+            }
+            result = JSON.stringify(result);
+            return result;
+        }
+    </script>
+</body>
+
+</html>
