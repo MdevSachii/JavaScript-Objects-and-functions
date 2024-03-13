@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Object</title>
+</head>
+
+<body>
+    <script>
+        var str = 'This is a JavaScript tutorial';
+        console.log(str);
+
+        var str1 = new String('This is a JavaScript tutorial');
+        console.log(str1);
+
+        var x = str1.toString();
+        console.log(x);
+
+        var upper = str.toUpperCase();
+        console.log(upper);
+
+        var lower = str.toLowerCase();
+        console.log(lower);
+
+        console.log(str.charAt(6));
+
+        console.log(str.indexOf('a'));
+
+        console.log(str.lastIndexOf('a'));
+
+        console.log(str.includes('Java'));
+
+        var s1 = 'Hello, ';
+        var s2 = 'World!';
+
+        var s = s1.concat(s2);
+        console.log(s);
+    </script>
+</body>
+
+</html>

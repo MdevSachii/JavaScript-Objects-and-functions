@@ -4,3 +4,4 @@
 [Prototype and Inheritance](./prototypeAndInheritance.html)
 [Prototype chain](./prototypeChain.html)
 [Hotel Management](./hotelManagement.html)
+[String Object](./stringObject.html)
