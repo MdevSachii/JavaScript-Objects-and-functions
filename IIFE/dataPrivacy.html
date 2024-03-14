@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE - How it provides Data privacy </title>
+</head>
+
+<body>
+    <script>
+        (function () {
+            var firstName = "John";
+            function greetings(name, timeOfDay) {
+                console.log('First function called: Good' + timeOfDay + ' ' + name +
+                    '. How are you doing today');
+
+            }
+            greetings(firstName, 'Evening');
+        })();
+
+        (function () {
+            var firstName = "Mark";
+            function greetings(name, timeOfDay) {
+                console.log('Second function called: Hi ' + name + '. Its a beautiful '
+                    + timeOfDay);
+            }
+            greetings(firstName, 'Mornning');
+        })();
+
+        (function () {
+            var firstName = "Mary";
+            function greetings(name, timeOfDay) {
+                console.log('Third function called: Hello ' + name + '. Its a nice '
+                    + timeOfDay);
+            }
+            greetings(firstName, 'Mornning');
+        })();
+    </script>
+</body>
+
+</html>
