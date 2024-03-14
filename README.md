@@ -12,3 +12,5 @@
 * [Object.create() Method](./createMethod.html)
 * [Function as Argument](./functionAsArgument.html)
 * [Function returning function](./functionReturningFunction.html)
+* IIFE - Design pattern of Js. It is used for data privecy.
+    * [IIFE - Basic undestand](./IIFE/immediatelyInvokedFunctionExpression.html)
