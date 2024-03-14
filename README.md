@@ -16,3 +16,4 @@
     * [IIFE - Basic undestand](./IIFE/immediatelyInvokedFunctionExpression.html)
     * [IIFE - How it provides Data privacy](./IIFE/dataPrivacy.html)
 * [Closures](./closures.html)
+* [call(), bind() and apply()](./javascriptCallBindApply.html)

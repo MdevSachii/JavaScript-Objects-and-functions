@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call(), bind() and apply()</title>
+</head>
+
+<body>
+    <script>
+        var john = {
+            name: 'john',
+            age: 29,
+            job: 'teacher',
+
+            greeting: function (style, timeOfDay) {
+                switch (style) {
+                    case 'formal':
+                        console.log('Good ' + timeOfDay + ' ladies  and gentlement My name is '
+                            + this.name + ' and i am ' + this.age + ' years old ' + this.job + '.');
+                        break;
+                    case 'friendly':
+                        console.log('Hey there! My name is ' + this.name +
+                            ' and i am ' + this.age + ' years old ' + this.job + '. Have a nice ' + timeOfDay);
+                        break;
+                }
+            }
+        }
+
+        john.greeting('friendly', 'morning');
+        var mark = {
+            name: 'Mark',
+            age: 35,
+            job: 'designer'
+        }
+
+        john.greeting.call(mark, 'formal', 'evening');
+
+        john.greeting.apply(mark, ['friendly', 'afternoon']);
+
+        var func = john.greeting.bind(mark, 'formal');
+        func('Morning');
+        func('Evening');
+    </script>
+</body>
+
+</html>
