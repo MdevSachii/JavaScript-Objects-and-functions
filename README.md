@@ -10,3 +10,4 @@
 * [Activity - Display Digital Clock](./displayDigitalClock.html)
 * [Math Object](./mathobject.html)
 * [Object.create() Method](./createMethod.html)
+* [Function as Argument](./functionAsArgument.html)
