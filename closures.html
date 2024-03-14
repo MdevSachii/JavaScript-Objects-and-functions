@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+    <script>
+        var add = function () {
+            var x = 1;
+            var f = function (y) {
+                return x + y;
+            }
+            return f;
+        }
+        var g = add();
+        console.log(add());
+    </script>
+</body>
+
+</html>

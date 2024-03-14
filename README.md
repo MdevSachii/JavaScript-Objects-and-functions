@@ -15,3 +15,4 @@
 * IIFE - Design pattern of Javascript. It is used for data privacy.
     * [IIFE - Basic undestand](./IIFE/immediatelyInvokedFunctionExpression.html)
     * [IIFE - How it provides Data privacy](./IIFE/dataPrivacy.html)
+* [Closures](./closures.html)
