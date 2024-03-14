@@ -9,3 +9,4 @@
 * [Date Object](./dateObject.html)
 * [Activity - Display Digital Clock](./displayDigitalClock.html)
 * [Math Object](./mathobject.html)
+* [Object.create() Method](./createMethod.html)
