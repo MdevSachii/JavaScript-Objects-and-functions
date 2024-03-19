@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object</title>
+</head>
+
+<body>
+    <script>
+        var date1 = new Date();
+        console.log(date1);
+
+        var date2 = new Date(2015);
+        console.log(date2);
+
+        var date3 = new Date('October 13, 2014 11:13:00');
+        console.log(date3);
+
+        var date4 = new Date(1000);
+        console.log(date4);
+
+        console.log(new Date(2003, 8, 20).getTime());
+
+        var weekday = date1.getDay();
+        console.log(weekday);
+
+        console.log(date1.getMonth());
+        console.log(date3.getFullYear());
+        console.log(date3.getHours());
+
+        var date5 = new Date(1993, 11, 19, 13, 45);
+        console.log(date5);
+        date5.setFullYear(1995); date5.setMonth(5); date5.setHours(10); console.log(date5);
+
+        var birthday = new Date(1997, 2, 9);
+        console.log(birthday);
+        var day = birthday.getDay();
+        console.log(day);
+        var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday'];
+        console.log('You were born on ' + weekdays[day]);
+
+        var startTime = new Date().getTime();
+        for (var i = 0; i < 1000; i++) {
+            console.log(i);
+        }
+
+        var endtime = new Date().getTime();
+        
+        elapsedTime = endtime - startTime;
+        console.log(elapsedTime);
+    </script>
+</body>
+
+</html>

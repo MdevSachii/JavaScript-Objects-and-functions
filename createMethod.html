@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create() Method</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            city: 'Landon',
+
+            calculateAge: function () {
+                var currentYear = new Date().getFullYear();
+                var age = currentYear - this.yearOfBirth;
+                console.log(age);
+            }
+        }
+
+        var john = Object.create(person);
+        john.name = 'john';
+        john.yearOfBirth = 1990;
+        john.occupation = 'Teacher';
+        john.calculateAge();
+        console.log(john);
+
+        var mark = Object.create(person, {
+            name: { value: 'Mark' },
+            yearOfBirth: { value: 1995 },
+        });
+        john.calculateAge();
+        console.log(mark.city);
+        console.log(mark);
+
+    </script>
+</body>
+
+</html>

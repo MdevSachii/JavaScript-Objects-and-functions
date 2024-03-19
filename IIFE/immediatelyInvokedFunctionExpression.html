@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediately Invoked Function Expression</title>
+</head>
+
+<body>
+    <script>
+        var greet = function () {
+            console.log('Hello, World');
+            return 10;
+        }();
+        console.log(greet);
+        //greet());
+
+// IIFE
+        (function () {
+            console.log('Hello, World');
+            return 10;
+        })();
+
+        (function (name, timeOfDay) {
+            console.log('Good '+timeOfDay+' '+ name+',Welcome back');
+        })('John', 'evening');
+    </script>
+</body>
+
+</html>

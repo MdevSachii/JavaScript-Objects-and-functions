@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function as Argument</title>
+</head>
+
+<body>
+    <script>
+        var years = [1995, 2003, 1989, 2007, 1901];
+        var getResultArray = function (arr, func) {
+            var result = [];
+            for (var i = 0; i < arr.length; i++) {
+                var el = arr[i];
+                var value = func(el);
+                result.push(value);
+            }
+            return result;
+        }
+        function calculateAge(birthYear) {
+            return (2020 - birthYear);
+        }
+
+        function isFullAge(age){
+            return age >= 18;
+        }
+
+        function getMaxHeartRate(age) {
+            if (age >= 18 && age <= 81) {
+                return 209.6 - (0.67 * age);
+            } else {
+                return -1;
+            }
+        }
+
+        var ageArray = getResultArray(years, calculateAge);
+        console.log(ageArray);
+
+        var fullAgeArray = getResultArray(ageArray, isFullAge);
+        console.log(fullAgeArray);
+
+        var maxHR = getResultArray(ageArray, getMaxHeartRate);
+        console.log(maxHR);
+    </script>
+</body>
+
+</html>

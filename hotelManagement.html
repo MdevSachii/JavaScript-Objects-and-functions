@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management</title>
+</head>
+
+<body>
+    <script>
+        var Room = function (capacity, price, number) {
+            this.capacity = capacity;
+            this.price = price;
+            this.number = number;
+            this.booked = false;
+        }
+
+        Room.prototype.info = function () {
+            var information = 'Room number ' + this.number + ' is ' +
+                (this.booked ? 'booked' : 'vacant') + '. This room cost $' +
+                this.price + ' per night amd can host up to ' + this.capacity +
+                (this.capacity > 1 ? ' guests. ' : ' guest. ')
+
+            console.log(information);
+        }
+
+        var room1 = new Room(2, 50, 1);
+        var room2 = new Room(1, 30, 2);
+        var room3 = new Room(3, 80, 5);
+
+        room1.info();
+        room2.info();
+
+        Room.prototype.book = function () {
+            this.booked = true;
+            console.log('Room number ' + this.number + ' has been booked. ');
+        }
+
+        room1.book();
+        room1.info();
+
+        Room.prototype.checkout = function () {
+            this.booked = false;
+            console.log('Room number ' + this.number + ' has been checked out. ');
+        }
+
+        room1.checkout();
+        room1.info();
+
+        Room.prototype.changePrice = function (newPrice) {
+            var oldPrice = this.price;
+            this.price = newPrice
+            console.log('The price of room number ' + this.number +
+                ' has been changed from $' + oldPrice + ' to $' + this.price + '. ');
+        }
+
+        room1.changePrice(70);
+        room1.info();
+
+        var hotel = {
+            name: "Hilton town center",
+            star: 5,
+            rooms: [room1, room2, room3]
+        }
+
+        hotel.info = function () {
+            console.log('\n\n Room info: ');
+            for (let index = 0; index < this.rooms.length; index++) {
+                this.rooms[index].info();
+
+            }
+        }
+
+        hotel.info();
+
+
+        hotel.book = function (guests) {
+
+            for (let index = 0; index < this.rooms.length; index++) {
+                var roomFound = false;
+                if (!this.rooms[index].booked && this.rooms[index].capacity >= guests) {
+                    this.rooms[index].book();
+                    break;
+                }
+                if (!roomFound) {
+                    console.log('Sorry, there are no rooms matching your query');
+                }
+            }
+        }
+
+        hotel.book(2);
+        hotel.info();
+
+        hotel.checkout = function (rNumber) {
+
+            for (let index = 0; index < this.rooms.length; index++) {
+                var roomFound = false;
+                if (this.rooms[index].number === rNumber) {
+                    this.rooms[index].checkout();
+                    break;
+                }
+            }
+        }
+
+        hotel.checkout(1);
+        hotel.info();
+    </script>
+</body>
+
+</html>

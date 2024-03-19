@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function returning function</title>
+</head>
+
+<body>
+    <script>
+        function greet() {
+            return function () {
+                console.log('Hello, World');
+            }
+        }
+        var x = greet();
+        console.log(x);
+        x();
+        greet()();
+
+        function interviewQuestion(job) {
+            switch (job) {
+                case 'Teacher':
+                    return function (name) {
+                        console.log('What subject do you teach ' + name + '?');
+                    }
+                case 'Designer':
+                    return function (name) {
+                        console.log(name + ', can you please explain what UX design is?')
+                    }
+                case 'Lowyer':
+                    return function (name) {
+                        console.log(name + ', how long you have been practice low?')
+                    }
+                default:
+                    return function (name) {
+                        console.log(name + ', how are you doing?')
+                    }
+            }
+        }
+
+        var teacherQuest = interviewQuestion('Teacher');
+        teacherQuest('John');
+
+        interviewQuestion('Designer')('Mark');
+        
+        interviewQuestion('Lawyer')('Mery');
+    </script>
+</body>
+
+</html>
